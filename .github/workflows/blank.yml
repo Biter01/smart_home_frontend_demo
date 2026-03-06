@@ -1,36 +1,29 @@
-name: Deploy React + Vite to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main  # Workflow läuft bei Push auf main
+    branches: [ "main" ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Repository auschecken
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      # 2. Node.js Setup
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '20' # oder deine Node Version
+          node-version: '20'
 
-      # 3. Dependencies installieren
       - name: Install dependencies
         run: npm ci
 
-      # 4. Projekt bauen
-      - name: Build project
+      - name: Build
         run: npm run build
 
-      # 5. Deploy zu GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
