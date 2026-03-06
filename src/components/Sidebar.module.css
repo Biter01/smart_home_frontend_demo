@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #1e1e1e;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.navLink {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #ccc;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Hover Effekt auslagern */
+.navLink:hover {
+  background: #6464b5;   /* Hintergrundfarbe beim Hover */
+  color: white;          /* Textfarbe beim Hover */
+}
