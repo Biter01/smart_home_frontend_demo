@@ -9,7 +9,7 @@ export default function App() {
     <div style={{ display: "flex" }}>
       <Sidebar />
 
-      <main style={{ padding: "20px", flex: 1 }}>
+      <main style={{ padding: "15px", flex: 1 }}>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/devices" element={<Devices />} />
